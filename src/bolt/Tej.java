@@ -11,7 +11,6 @@ public class Tej {
 	private long ar;
 
 	public Tej(int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom, long ar) {
-		super();
 		this.urtartalom = urtartalom;
 		this.gyarto = gyarto;
 		this.szavatossagiIdo = szavatossagiIdo;
@@ -24,26 +23,27 @@ public class Tej {
 	}
 
 	public int getUrtartalom() {
-		return 0;
+		return urtartalom;
 	}
 
 	public String getGyarto() {
-		return null;
+		return gyarto;
 	}
 
 	public Date getSzavatossagiIdo() {
-		return null;
+		return szavatossagiIdo;
 	}
 
 	public double getZsirtartalom() {
-		return 0;
+		return zsirtartalom;
 	}
 
-	public int getAr() {
-		return 0;
+	public long getAr() {
+		return ar;
 	}
 
-	public String toStribg() {
-		return null;
+	public String toString() {
+		return this.urtartalom + ", " + this.gyarto + ", " + this.szavatossagiIdo + ", " + this.zsirtartalom + ", "
+				+ this.ar;
 	}
 }
