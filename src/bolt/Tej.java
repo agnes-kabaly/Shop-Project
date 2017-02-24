@@ -19,6 +19,11 @@ public class Tej {
 	}
 
 	public boolean joMeg() {
+
+		Date today = new Date();
+		if (today.before(szavatossagiIdo)) {
+			return true;
+		}
 		return false;
 	}
 
@@ -43,7 +48,7 @@ public class Tej {
 	}
 
 	public String toString() {
-		return this.urtartalom + ", " + this.gyarto + ", " + this.szavatossagiIdo + ", " + this.zsirtartalom + ", "
-				+ this.ar;
+		return "Űrtartalom: " + this.urtartalom + ", " + "gyártó: " + this.gyarto + ", " + "szavatossági idő: "
+				+ this.szavatossagiIdo + ", " + "zsirtartalom: " + this.zsirtartalom + ", " + "ár: " + this.ar;
 	}
 }
