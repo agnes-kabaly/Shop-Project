@@ -83,11 +83,11 @@ public class Bolt {
 		}
 
 		public void adMennyiseg(int mennyiseg) {
-			mennyiseg = this.mennyiseg + mennyiseg;
+			this.mennyiseg = this.mennyiseg + mennyiseg;
 		}
 
 		public void levonMennyiseg(int mennyiseg) {
-			mennyiseg = this.mennyiseg - mennyiseg;
+			this.mennyiseg = this.mennyiseg - mennyiseg;
 		}
 
 		public int getAr() {
