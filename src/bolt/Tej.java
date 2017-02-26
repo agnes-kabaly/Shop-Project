@@ -4,25 +4,24 @@ import java.util.Date;
 
 public class Tej {
 
-	private long vonalKod;
-	private final int LITER = 1000;
-	private final int FELLITER = 500;
-	private final int POHAR = 250;
-	private final double ZSIROS = 3.5;
-	private final double FELZSIROS = 2.8;
-	private int urtartalom;
-	private String gyarto;
-	private Date szavatossagiIdo;
-	private double zsirtartalom;
-	private long ar;
+	public final int LITER = 1000;
+	public final int FELLITER = 500;
+	public final int POHAR = 250;
+	public final double ZSIROS = 3.5;
+	public final double FELZSIROS = 2.8;
 
-	public Tej(long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom, long ar) {
+	protected long vonalKod;
+	protected int urtartalom;
+	protected String gyarto;
+	protected Date szavatossagiIdo;
+	protected double zsirtartalom;
+
+	public Tej(long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
 		this.vonalKod = vonalKod;
 		this.urtartalom = urtartalom;
 		this.gyarto = gyarto;
 		this.szavatossagiIdo = szavatossagiIdo;
 		this.zsirtartalom = zsirtartalom;
-		this.ar = ar;
 	}
 
 	public long getVonalKod() {
@@ -54,13 +53,8 @@ public class Tej {
 		return zsirtartalom;
 	}
 
-	public long getAr() {
-		return ar;
-	}
-
 	public String toString() {
 		return "Vonalkód: " + this.vonalKod + ", " + "Űrtartalom: " + this.urtartalom + ", " + "gyártó: " + this.gyarto
-				+ ", " + "szavatossági idő: " + this.szavatossagiIdo + ", " + "zsirtartalom: " + this.zsirtartalom
-				+ ", " + "ár: " + this.ar;
+				+ ", " + "szavatossági idő: " + this.szavatossagiIdo + ", " + "zsirtartalom: " + this.zsirtartalom;
 	}
 }

@@ -42,17 +42,61 @@ public class Bolt {
 		return false;
 	}
 
+	public void feltoltTej(Tej t) {
+
+		if (tejpult.containsKey(t)) {
+			tejpult.put(t, tejpult.get(t));
+		}
+		tejpult.put(t, 1);
+	}
+
 	// public Tej vasarolTej(long vonalKod) {
 	public Tej vasarolTej(Tej m) {
 		return m;
 	}
 
-	public void feltoltTej(Tej m) {
+	public class BoltBejegyzes {
+		private Tej t;
+		private int mennyiseg;
+		private int ar;
 
-		if (tejpult.containsKey(m)) {
-			tejpult.put(m, tejpult.get(m));
+		public BoltBejegyzes(Tej t, int mennyiseg, int ar) {
+			this.t = t;
+			this.mennyiseg = mennyiseg;
+			this.ar = ar;
 		}
-		tejpult.put(m, 1);
-	}
 
+		public Tej getT() {
+			return t;
+		}
+
+		public void setT(Tej t) {
+			this.t = t;
+		}
+
+		public int getMennyiseg() {
+			return mennyiseg;
+		}
+
+		public void setMennyiseg(int mennyiseg) {
+			this.mennyiseg = mennyiseg;
+		}
+
+		public void adMennyiseg(int mennyiseg) {
+			mennyiseg = this.mennyiseg + mennyiseg;
+		}
+
+		public void levonMennyiseg(int mennyiseg) {
+			mennyiseg = this.mennyiseg - mennyiseg;
+		}
+
+		public int getAr() {
+			return ar;
+		}
+
+		public void setAr(int ar) {
+			this.ar = ar;
+		}
+
+	}
 }
