@@ -4,18 +4,29 @@ import java.util.Date;
 
 public class Tej {
 
+	private long vonalKod;
+	private final int LITER = 1000;
+	private final int FELLITER = 500;
+	private final int POHAR = 250;
+	private final double ZSIROS = 3.5;
+	private final double FELZSIROS = 2.8;
 	private int urtartalom;
 	private String gyarto;
 	private Date szavatossagiIdo;
 	private double zsirtartalom;
 	private long ar;
 
-	public Tej(int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom, long ar) {
+	public Tej(long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom, long ar) {
+		this.vonalKod = vonalKod;
 		this.urtartalom = urtartalom;
 		this.gyarto = gyarto;
 		this.szavatossagiIdo = szavatossagiIdo;
 		this.zsirtartalom = zsirtartalom;
 		this.ar = ar;
+	}
+
+	public long getVonalKod() {
+		return vonalKod;
 	}
 
 	public boolean joMeg() {
@@ -48,7 +59,8 @@ public class Tej {
 	}
 
 	public String toString() {
-		return "Űrtartalom: " + this.urtartalom + ", " + "gyártó: " + this.gyarto + ", " + "szavatossági idő: "
-				+ this.szavatossagiIdo + ", " + "zsirtartalom: " + this.zsirtartalom + ", " + "ár: " + this.ar;
+		return "Vonalkód: " + this.vonalKod + ", " + "Űrtartalom: " + this.urtartalom + ", " + "gyártó: " + this.gyarto
+				+ ", " + "szavatossági idő: " + this.szavatossagiIdo + ", " + "zsirtartalom: " + this.zsirtartalom
+				+ ", " + "ár: " + this.ar;
 	}
 }

@@ -1,15 +1,15 @@
 package bolt;
 
-import java.util.Vector;
+import java.util.Hashtable;
 
 public class Bolt {
 
 	private String nev;
 	private String cim;
 	private String tulajdonos;
-	private Vector<Tej> tejpult;
+	private Hashtable tejpult;
 
-	public Bolt(String nev, String cim, String tulajdonos, Vector<Tej> tejpult) {
+	public Bolt(String nev, String cim, String tulajdonos, Hashtable tejpult) {
 		this.nev = nev;
 		this.cim = cim;
 		this.tulajdonos = tulajdonos;
@@ -42,13 +42,17 @@ public class Bolt {
 		return false;
 	}
 
+	// public Tej vasarolTej(long vonalKod) {
 	public Tej vasarolTej(Tej m) {
 		return m;
 	}
 
 	public void feltoltTej(Tej m) {
 
-		tejpult.add(m);
+		if (tejpult.containsKey(m)) {
+			tejpult.put(m, tejpult.get(m));
+		}
+		tejpult.put(m, 1);
 	}
 
 }
