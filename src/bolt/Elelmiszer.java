@@ -2,7 +2,7 @@ package bolt;
 
 import java.util.Date;
 
-public abstract class Elelmiszer {
+public abstract class Elelmiszer extends Aru {
 
 	protected Long vonalKod;
 	protected String gyarto;

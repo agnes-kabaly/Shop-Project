@@ -1,5 +1,10 @@
 package kivetel;
 
-public class NemLetezoAruKivetel {
+import bolt.BoltKivetel;
 
+public class NemLetezoAruKivetel extends BoltKivetel {
+
+	public NemLetezoAruKivetel(String message) {
+		System.err.println(message);
+	}
 }
