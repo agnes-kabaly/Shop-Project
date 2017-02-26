@@ -2,7 +2,7 @@ package bolt;
 
 import java.util.Date;
 
-public abstract class Tej {
+public abstract class Tej extends Elelmiszer {
 
 	public final int LITER = 1000;
 	public final int FELLITER = 500;
@@ -17,10 +17,8 @@ public abstract class Tej {
 	protected double zsirtartalom;
 
 	public Tej(long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
-		this.vonalKod = vonalKod;
+		super(vonalKod, gyarto, szavatossagiIdo);
 		this.urtartalom = urtartalom;
-		this.gyarto = gyarto;
-		this.szavatossagiIdo = szavatossagiIdo;
 		this.zsirtartalom = zsirtartalom;
 	}
 
