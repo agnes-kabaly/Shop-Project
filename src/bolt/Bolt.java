@@ -7,9 +7,9 @@ public class Bolt {
 	private String nev;
 	private String cim;
 	private String tulajdonos;
-	private Hashtable elelmiszerpult;
+	private Hashtable<Long, BoltBejegyzes> elelmiszerpult;
 
-	public Bolt(String nev, String cim, String tulajdonos, Hashtable elelmiszerpult) {
+	public Bolt(String nev, String cim, String tulajdonos, Hashtable<Long, BoltBejegyzes> elelmiszerpult) {
 		this.nev = nev;
 		this.cim = cim;
 		this.tulajdonos = tulajdonos;
@@ -36,38 +36,37 @@ public class Bolt {
 
 	public boolean vanMegAdottAru(Class c) {
 
-		// if (elelmiszerpult.size() > 0) {
-		// return true;
-		// }
+		for (BoltBejegyzes boltBejegyzes : elelmiszerpult.values()) {
+			Elelmiszer elelmiszer = boltBejegyzes.getElelmiszer();
+			if (elelmiszer.getClass().equals(c)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
 	public boolean vanMegTej() {
 
-		// if (elelmiszerpult.size() > 0) {
-		// return true;
-		// }
-		return false;
+		return vanMegAdottAru(Tej.class);
 	}
 
 	public boolean vanMegSajt() {
 
-		// if (elelmiszerpult.size() > 0) {
-		// return true;
-		// }
-		return false;
+		return vanMegAdottAru(Sajt.class);
 	}
 
 	public void feltoltElelmiszerrel(Long vonalKod, long mennyiseg) {
 
-		// if (elelmiszerpult.containsKey(t)) {
-		// elelmiszerpult.put(t, elelmiszerpult.get(t));
-		// }
-		// elelmiszerpult.put(t, 1);
+		for (Long v : elelmiszerpult.keySet()) {
+			if (v.equals(vonalKod)) {
+				elelmiszerpult.get(v).adMennyiseg(mennyiseg);
+			}
+		}
 	}
 
 	public void feltoltUjElelmiszerrel(Elelmiszer e, long mennyiseg, long ar) {
-		// ujElelmiszer = ...?
+		BoltBejegyzes ujElelmiszer = new BoltBejegyzes(e, mennyiseg, ar);
+		elelmiszerpult.put(e.getVonalKod(), ujElelmiszer);
 	}
 
 	public void torolElelmiszert(Long vonalKod) {
@@ -75,7 +74,11 @@ public class Bolt {
 	}
 
 	public void vasarolElelmiszert(Long vonalKod, long mennyiseg) {
-		// vasarol?
+		for (Long v : elelmiszerpult.keySet()) {
+			if (v.equals(vonalKod)) {
+				elelmiszerpult.get(v).levonMennyiseg(mennyiseg);
+			}
+		}
 	}
 
 	public class BoltBejegyzes {
