@@ -10,19 +10,19 @@ public abstract class Tej extends Elelmiszer {
 	public final double ZSIROS = 3.5;
 	public final double FELZSIROS = 2.8;
 
-	protected long vonalKod;
+	protected Long vonalKod;
 	protected int urtartalom;
 	protected String gyarto;
 	protected Date szavatossagiIdo;
 	protected double zsirtartalom;
 
-	public Tej(long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
+	public Tej(Long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
 		super(vonalKod, gyarto, szavatossagiIdo);
 		this.urtartalom = urtartalom;
 		this.zsirtartalom = zsirtartalom;
 	}
 
-	public long getVonalKod() {
+	public Long getVonalKod() {
 		return vonalKod;
 	}
 
