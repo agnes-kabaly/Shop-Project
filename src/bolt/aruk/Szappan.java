@@ -6,12 +6,12 @@ public class Szappan extends Aru {
 
 	protected Long vonalKod;
 	protected String gyarto;
-	protected char mosogatas;
+	protected char mosohatas;
 
-	public Szappan(Long vonalKod, String gyarto, char mosogatas) {
+	public Szappan(Long vonalKod, String gyarto, char mosohatas) {
 		this.vonalKod = vonalKod;
 		this.gyarto = gyarto;
-		this.mosogatas = mosogatas;
+		this.mosohatas = mosohatas;
 	}
 
 }
