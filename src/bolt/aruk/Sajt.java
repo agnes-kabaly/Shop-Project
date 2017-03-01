@@ -1,11 +1,27 @@
-package bolt;
+package bolt.aruk;
 
 import java.util.Date;
 
 public class Sajt extends Elelmiszer {
 
-	public Sajt(Long vonalKod, String gyarto, Date szavatossagiIdo) {
+	protected double suly;
+	protected double zsirtartalom;
+	protected Long vonalKod;
+	protected String gyarto;
+	protected Date szavatossagiIdo;
+
+	public Sajt(Long vonalKod, double suly, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
 		super(vonalKod, gyarto, szavatossagiIdo);
+		this.suly = suly;
+		this.zsirtartalom = zsirtartalom;
+	}
+
+	public double getSuly() {
+		return suly;
+	}
+
+	public double getZsirtartalom() {
+		return zsirtartalom;
 	}
 
 	@Override
@@ -36,7 +52,7 @@ public class Sajt extends Elelmiszer {
 	@Override
 	public String toString() {
 		return "Vonalkód: " + this.vonalKod + ", " + "gyártó: " + this.gyarto + ", " + "szavatossági idő: "
-				+ this.szavatossagiIdo;
+				+ this.szavatossagiIdo + ", " + "súly: " + this.suly + ", " + "zsírtartalom: " + this.zsirtartalom;
 	}
 
 }
